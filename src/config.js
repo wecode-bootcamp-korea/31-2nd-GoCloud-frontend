@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://13.125.241.114:8000';
+export const BASE_URL = 'http://13.125.124.146:8000';
 
 export const API = {
   kakaologin: `${BASE_URL}/users/signin/kakao`, // 카카오 로그인

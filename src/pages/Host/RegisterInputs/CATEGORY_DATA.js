@@ -5,31 +5,31 @@ const CATEGORY_DATA = [
     list: [
       {
         id: 1,
-        category: '파티룸',
+        spaceType: '파티룸',
       },
       {
         id: 2,
-        category: '스터디룸',
+        spaceType: '스터디룸',
       },
       {
         id: 3,
-        category: '카페',
+        spaceType: '카페',
       },
       {
         id: 4,
-        category: '강의실',
+        spaceType: '강의실',
       },
       {
         id: 5,
-        category: '공유주방',
+        spaceType: '공유주방',
       },
       {
         id: 6,
-        category: '회의실',
+        spaceType: '회의실',
       },
       {
         id: 7,
-        category: '세미나실',
+        spaceType: '세미나실',
       },
     ],
   },
@@ -39,27 +39,27 @@ const CATEGORY_DATA = [
     list: [
       {
         id: 1,
-        category: '연습실',
+        spaceType: '연습실',
       },
       {
         id: 2,
-        category: '댄스연습실',
+        spaceType: '댄스연습실',
       },
       {
         id: 3,
-        category: '보컬연습실',
+        spaceType: '보컬연습실',
       },
       {
         id: 4,
-        category: '악기연습실',
+        spaceType: '악기연습실',
       },
       {
         id: 5,
-        category: '녹음실',
+        spaceType: '녹음실',
       },
       {
         id: 6,
-        category: '운동시설',
+        spaceType: '운동시설',
       },
     ],
   },
@@ -69,23 +69,23 @@ const CATEGORY_DATA = [
     list: [
       {
         id: 1,
-        category: '촬영스튜디오',
+        spaceType: '촬영스튜디오',
       },
       {
         id: 2,
-        category: '렌탈스튜디오',
+        spaceType: '렌탈스튜디오',
       },
       {
         id: 3,
-        category: '호리존',
+        spaceType: '호리존',
       },
       {
         id: 4,
-        category: '라이브방송',
+        spaceType: '라이브방송',
       },
       {
         id: 5,
-        category: '실외촬영',
+        spaceType: '실외촬영',
       },
     ],
   },
@@ -95,21 +95,22 @@ const CATEGORY_DATA = [
     list: [
       {
         id: 1,
-        category: '공연장',
+        spaceType: '공연장',
       },
       {
         id: 2,
-        category: '갤러리',
+        spaceType: '갤러리',
       },
       {
         id: 3,
-        category: '스몰웨딩',
+        spaceType: '스몰웨딩',
       },
       {
         id: 4,
-        category: '컨퍼런스',
+        spaceType: '컨퍼런스',
       },
     ],
   },
 ];
+
 export default CATEGORY_DATA;

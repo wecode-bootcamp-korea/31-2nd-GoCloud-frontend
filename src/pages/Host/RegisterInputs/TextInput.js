@@ -1,11 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const TextInput = ({ title, placeholder }) => {
+const TextInput = ({ title, placeholder, spaceInfoHandler, name }) => {
   return (
     <>
       <Title>{title}</Title>
-      <Input type="text" placeholder={placeholder} />
+      <Input
+        name={name}
+        type="text"
+        placeholder={placeholder}
+        onChange={spaceInfoHandler}
+      />
     </>
   );
 };
