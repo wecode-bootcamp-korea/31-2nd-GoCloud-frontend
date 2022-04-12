@@ -4,8 +4,6 @@ import reset from 'styled-reset';
 const GlobalStyle = createGlobalStyle`
 ${reset}
 
-
-
 * {
   box-sizing: border-box; 
   outline: none;
@@ -16,9 +14,6 @@ img{
   width: 100%;
   height: 100%;
 }
-
-
-
 
 `;
 
