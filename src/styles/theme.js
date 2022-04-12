@@ -1,9 +1,3 @@
-const Flex = (justifyContent, alignItems) => css`
-  display: flex;
-  justify-content: ${justifyContent};
-  align-items: ${alignItems};
-`;
-
 const theme = {
   background: '#fff',
   grey: '#e9e9e9',
