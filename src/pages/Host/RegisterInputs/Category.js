@@ -1,20 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
+import CategoryBtn from './CategoryBtn';
 import CATEGORY_DATA from './CATEGORY_DATA';
 
-const Category = () => {
+const Category = ({ spaceCategoryHandler, category }) => {
   return (
-    <CategoryWrap>
-      {CATEGORY_DATA.map(({ id, title, list }) => (
-        <CategoryContainer key={id}>
-          <CategoryTitle>{title}</CategoryTitle>
-          <Arrow>▶</Arrow>
-          {list.map(({ id, category }) => (
-            <CategoryList key={id}>{category}</CategoryList>
-          ))}
-        </CategoryContainer>
-      ))}
-    </CategoryWrap>
+    <div>
+      <CategoryWrap>
+        {CATEGORY_DATA.map(({ id, title, list }) => (
+          <CategoryContainer key={id}>
+            <CategoryTitle>{title}</CategoryTitle>
+            <Arrow>▶</Arrow>
+            {list.map(({ id, spaceType }) => (
+              <CategoryBtn
+                key={id}
+                spaceType={spaceType}
+                spaceCategoryHandler={spaceCategoryHandler}
+                isSelect={category.includes(spaceType)}
+              />
+            ))}
+          </CategoryContainer>
+        ))}
+      </CategoryWrap>
+    </div>
   );
 };
 
@@ -46,16 +54,4 @@ const Arrow = styled.span`
   color: ${({ theme }) => theme.grey};
   font-size: 13px;
   transform: translateX(-4px);
-`;
-
-const CategoryList = styled.li`
-  ${({ theme }) => theme.flexMixIn('center', 'center')}
-  width: 108px;
-  height: 30px;
-  margin-right: 30px;
-  border: none;
-  border-radius: 20px;
-  background-color: ${({ theme }) => theme.grey};
-  color: #8e8e8e;
-  cursor: pointer;
 `;
