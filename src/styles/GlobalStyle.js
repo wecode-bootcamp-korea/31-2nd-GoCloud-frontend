@@ -8,7 +8,7 @@ ${reset}
 
 * {
   box-sizing: border-box; 
-  ouline: none;
+  outline: none;
   font-family: ‘Black Han Sans’, sans-serif;
 }
 
