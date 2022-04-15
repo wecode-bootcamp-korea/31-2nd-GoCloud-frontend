@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "space_name": "위코드 사무실",
+    "address": "삼성동",
+    "price": "5,000",
+    "imgs": [
+      { "id": 1, "img": "/images/main/1.jpg" },
+      { "id": 2, "img": "/images/main/공부.jpg" },
+      { "id": 3, "img": "/images/main/공부1.jpg" },
+      { "id": 4, "img": "/images/main/빵.jpg" }
+    ]
+  },
+  {
+    "id": 2,
+    "space_name": "위코드 사무실",
+    "address": "삼성동",
+    "price": "5,000",
+    "imgs": [
+      { "id": 1, "img": "/images/main/1.jpg" },
+      { "id": 2, "img": "/images/main/공부.jpg" },
+      { "id": 3, "img": "/images/main/공부1.jpg" },
+      { "id": 4, "img": "/images/main/빵.jpg" }
+    ]
+  },
+  {
+    "id": 3,
+    "space_name": "위코드 사무실",
+    "address": "삼성동",
+    "price": "5,000",
+    "imgs": [
+      { "id": 1, "img": "/images/main/1.jpg" },
+      { "id": 2, "img": "/images/main/공부.jpg" },
+      { "id": 3, "img": "/images/main/공부1.jpg" },
+      { "id": 4, "img": "/images/main/빵.jpg" }
+    ]
+  },
+  {
+    "id": 4,
+    "space_name": "위코드 사무실",
+    "address": "삼성동",
+    "price": "5,000",
+    "imgs": [
+      { "id": 1, "img": "/images/main/1.jpg" },
+      { "id": 2, "img": "/images/main/공부.jpg" },
+      { "id": 3, "img": "/images/main/공부1.jpg" },
+      { "id": 4, "img": "/images/main/빵.jpg" }
+    ]
+  },
+  {
+    "id": 5,
+    "space_name": "위코드 사무실",
+    "address": "삼성동",
+    "price": "5,000",
+    "imgs": [
+      { "id": 1, "img": "/images/main/1.jpg" },
+      { "id": 2, "img": "/images/main/공부.jpg" },
+      { "id": 3, "img": "/images/main/공부1.jpg" },
+      { "id": 4, "img": "/images/main/빵.jpg" }
+    ]
+  },
+  {
+    "id": 6,
+    "space_name": "위코드 사무실",
+    "address": "삼성동",
+    "price": "5,000",
+    "imgs": [
+      { "id": 1, "img": "/images/main/1.jpg" },
+      { "id": 2, "img": "/images/main/공부.jpg" },
+      { "id": 3, "img": "/images/main/공부1.jpg" },
+      { "id": 4, "img": "/images/main/빵.jpg" }
+    ]
+  },
+  {
+    "id": 7,
+    "space_name": "위코드 사무실",
+    "address": "삼성동",
+    "price": "5,000",
+    "imgs": [
+      { "id": 1, "img": "/images/main/1.jpg" },
+      { "id": 2, "img": "/images/main/공부.jpg" },
+      { "id": 3, "img": "/images/main/공부1.jpg" },
+      { "id": 4, "img": "/images/main/빵.jpg" }
+    ]
+  },
+  {
+    "id": 8,
+    "space_name": "위코드 사무실",
+    "address": "삼성동",
+    "price": "5,000",
+    "imgs": [
+      { "id": 1, "img": "/images/main/1.jpg" },
+      { "id": 2, "img": "/images/main/공부.jpg" },
+      { "id": 3, "img": "/images/main/공부1.jpg" },
+      { "id": 4, "img": "/images/main/빵.jpg" }
+    ]
+  },
+  {
+    "id": 9,
+    "space_name": "위코드 사무실",
+    "address": "삼성동",
+    "price": "5,000",
+    "imgs": [
+      { "id": 1, "img": "/images/main/1.jpg" },
+      { "id": 2, "img": "/images/main/공부.jpg" },
+      { "id": 3, "img": "/images/main/공부1.jpg" },
+      { "id": 4, "img": "/images/main/빵.jpg" }
+    ]
+  },
+  {
+    "id": 10,
+    "space_name": "위코드 사무실",
+    "address": "삼성동",
+    "price": "5,000",
+    "imgs": [
+      { "id": 1, "img": "/images/main/1.jpg" },
+      { "id": 2, "img": "/images/main/공부.jpg" },
+      { "id": 3, "img": "/images/main/공부1.jpg" },
+      { "id": 4, "img": "/images/main/빵.jpg" }
+    ]
+  },
+  {
+    "id": 11,
+    "space_name": "위코드 사무실",
+    "address": "삼성동",
+    "price": "5,000",
+    "imgs": [
+      { "id": 1, "img": "/images/main/1.jpg" },
+      { "id": 2, "img": "/images/main/공부.jpg" },
+      { "id": 3, "img": "/images/main/공부1.jpg" },
+      { "id": 4, "img": "/images/main/빵.jpg" }
+    ]
+  },
+  {
+    "id": 12,
+    "space_name": "위코드 사무실",
+    "address": "삼성동",
+    "price": "5,000",
+    "imgs": [
+      { "id": 1, "img": "/images/main/1.jpg" },
+      { "id": 2, "img": "/images/main/공부.jpg" },
+      { "id": 3, "img": "/images/main/공부1.jpg" },
+      { "id": 4, "img": "/images/main/빵.jpg" }
+    ]
+  }
+]
