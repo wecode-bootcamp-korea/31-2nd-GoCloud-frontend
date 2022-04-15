@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { FaAngleRight } from 'react-icons/fa';
-import { API } from '../../config';
 
 const BookingFormat = ({ space, price, start_time, space_id }) => {
   const navigate = useNavigate();

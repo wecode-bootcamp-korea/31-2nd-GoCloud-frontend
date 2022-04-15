@@ -20,9 +20,7 @@ const CustomSelect = React.forwardRef(function CustomSelect(props, ref) {
   return <SelectUnstyled {...props} ref={ref} components={components} />;
 });
 
-export default function DropDown({ sortHandler, query }) {
-  const navigate = useNavigate();
-
+export default function DropDown({ sortHandler }) {
   return (
     <CustomSelect
       defaultValue="베스트 공간 순"
