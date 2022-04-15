@@ -10,7 +10,7 @@ import { BsPersonFill } from 'react-icons/bs';
 const ListItem = ({ id, room_name, address, price, capacity, image }) => {
   const navigate = useNavigate();
   const goToDetail = () => {
-    navigate(`spaces/detail/${id}`);
+    navigate(`/detail/${id}`);
   };
 
   return (
@@ -21,9 +21,9 @@ const ListItem = ({ id, room_name, address, price, capacity, image }) => {
         slidesPerView={1}
         navigation
       >
-        {image.map(({ img }, idx) => (
+        {image.map((data, idx) => (
           <SwiperSlide key={idx}>
-            <ListImg src={img} />
+            <ListImg src={data} />
           </SwiperSlide>
         ))}
       </Swiper>

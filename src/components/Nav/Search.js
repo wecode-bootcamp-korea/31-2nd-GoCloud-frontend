@@ -14,8 +14,8 @@ const Search = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    const queryString = `?${searchInput}`;
-    navigate(`/list${queryString}`);
+    const queryString = `?category=${searchInput}`;
+    navigate(`/spaces${queryString}`);
   };
 
   return (
