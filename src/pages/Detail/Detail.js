@@ -105,7 +105,7 @@ const Detail = () => {
                 <ListItem image={detailData.image} />
               </MainImgSection>
 
-              <h3>당신의 도약을 응원합니다.</h3>
+              <DetailPhrase>당신의 도약을 응원합니다.</DetailPhrase>
               <Scroll detail={bookingResult.detail} />
             </Center>
 
@@ -212,6 +212,10 @@ const ResponseColumn = styled.div`
   }
 `;
 
+const DetailPhrase = styled.div`
+  margin-top: 150px;
+  font-size: 30px;
+`;
 const RightIconList = styled.ul`
   display: flex;
   flex-wrap: wrap;

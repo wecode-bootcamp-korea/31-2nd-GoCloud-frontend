@@ -63,5 +63,7 @@ const Menu = styled.div`
 
 const AsideMenu = styled.div`
   display: flex;
+  justify-content: space-between;
+  width: 200px;
   transform: translateX(-30px);
 `;

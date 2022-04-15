@@ -34,7 +34,7 @@ export default Search;
 
 const SearchBox = styled.form`
   position: relative;
-  right: 15%;
+  right: 30%;
   transform: translateX(150px);
 `;
 

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Calendar from './Calendar';
 import PriceSlider from './PriceSlider';
@@ -9,9 +8,7 @@ const Popup = ({
   dateQueryHandler,
   capacityQueryHandler,
   handleClick,
-  query,
 }) => {
-  const navigate = useNavigate();
   const [capacity, setCapacity] = useState(1);
   const [date, setDate] = useState('');
 
