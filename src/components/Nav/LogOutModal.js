@@ -34,11 +34,12 @@ const LogOut = ({ logOut, setLogOut, aside, setAside }) => {
 export default LogOut;
 
 const LogOutBox = styled.div`
+  ${({ theme }) => theme.flexMixIn('center', 'center')}
   position: fixed;
   top: 45%;
   left: 50%;
   width: 350px;
-  height: 150px;
+  height: 200px;
   border: 1px solid #e9e9e9;
   border-radius: 3%;
   background-color: #fff;
@@ -52,7 +53,7 @@ const LogOutModal = styled.div`
 
 const LogoutLogo = styled.div`
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
 `;
 
@@ -64,6 +65,7 @@ const YesNoBox = styled.div`
 const YesBox = styled.button`
   width: 90px;
   border: 1px solid #6d3afb;
+  border-radius: 5px;
   background-color: #6d3afb;
   color: rgba(255, 208, 20, 0.85);
   margin-right: 50px;
@@ -74,6 +76,7 @@ const YesBox = styled.button`
 const NoBox = styled.button`
   width: 90px;
   border: 1px solid rgba(255, 208, 20, 0.85);
+  border-radius: 5px;
   background-color: rgba(255, 208, 20, 0.85);
   color: #6d3afb;
   padding: 10px;

@@ -15,6 +15,7 @@ import { BsFillJournalBookmarkFill, BsHouse } from 'react-icons/bs';
 
 const Aside = ({ aside, asideToggle, setAside }) => {
   const token = localStorage.getItem('access_token');
+  const Name = localStorage.getItem('name');
   const [service, setService] = useState(false);
   const [host, setHost] = useState(false);
   const [logOut, setLogOut] = useState(false);
@@ -65,7 +66,7 @@ const Aside = ({ aside, asideToggle, setAside }) => {
         <GuestBox>
           {token ? (
             <div>
-              <LoginSignIn>노영완님!!!</LoginSignIn>
+              <LoginSignIn>{Name}님!!!</LoginSignIn>
               <LoginSignIn>환영합니다!!!</LoginSignIn>
             </div>
           ) : (

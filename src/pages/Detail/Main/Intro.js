@@ -35,6 +35,7 @@ export default Intro;
 const MainIntro = styled.div`
   margin: 100px 0px;
   p {
+    width: 760px;
     color: #656565;
     font-size: 16px;
     line-height: 28px;

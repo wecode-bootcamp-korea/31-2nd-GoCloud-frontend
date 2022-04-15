@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Picker from './Picker';
@@ -24,11 +24,15 @@ const Detail = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [selectedData, setSelectedData] = useState([]);
   const { id } = useParams();
+  const [detailData, setDetailData] = useState([]);
+
+  useEffect(() => {
+    fetch(`${API.detail}/${id}`)
+      .then(res => res.json())
+      .then(data => setDetailData(data.result));
+  }, [id]);
 
   const bookingResult = useFetch(`${API.detail}/${id}`).result;
-
-  // const listData = bookingResult.image;
-  // const listData = useFetch('/data/swiperData.json');
 
   const sendSubmitEvent = () => {
     fetch(`${API.list}/${id}/booking`, {
@@ -41,6 +45,7 @@ const Detail = () => {
       body: JSON.stringify({
         start_time: selectedData[0],
         finish_time: selectedData[1],
+        space_name: id,
       }),
     })
       .then(res => res.json())
@@ -97,9 +102,7 @@ const Detail = () => {
           <Main>
             <Center>
               <MainImgSection>
-                {/* {listData.map(({ id, img }) => {
-                  return <ListItem key={id} image={img} />;
-                })} */}
+                <ListItem image={detailData.image} />
               </MainImgSection>
 
               <h3>당신의 도약을 응원합니다.</h3>
@@ -271,6 +274,7 @@ const SubmitBtn = styled.input`
 
 const Center = styled.div`
   margin: 0 4% 0 0;
+
   h3 {
     padding: 50px 100px 0 0;
     font-size: 48px;

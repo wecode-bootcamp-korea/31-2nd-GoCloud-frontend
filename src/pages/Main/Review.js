@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import theme from '../../styles/theme';
 
-const Review = ({ id, image, space_name, content, price }) => {
+const Review = ({ id, image, space_name, content, price, space }) => {
   const navigate = useNavigate();
+
   const goToDetail = () => {
-    navigate(`spaces/detail/${id}`);
+    navigate(`detail/${space.space_id}`);
   };
   return (
     <ReviewBox onClick={goToDetail}>
@@ -75,8 +76,8 @@ const ReviewText = styled.span`
 
 const ReviewComment = styled.div`
   margin-top: 10px;
-  font-size: 14px;
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1.71;
   text-align: left;
   color: gray;

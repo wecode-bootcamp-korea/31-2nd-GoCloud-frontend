@@ -20,19 +20,19 @@ const Main = () => {
   const location = useLocation();
 
   useEffect(() => {
-    fetch(`${API.spacelist}${location.search || `?limit=${limit}&offset=0`}`)
+    fetch(`${API.list}${location.search || `?limit=${limit}&offset=0`}`)
       .then(res => res.json())
       .then(data => setListData(data.result));
   }, [limit, location.search]);
 
   useEffect(() => {
-    fetch(`${API.spacesreviews}`)
+    fetch(`${API.reviews}`)
       .then(res => res.json())
       .then(res => setReviewData(res.result));
   }, []);
 
   const goToList = name => {
-    navigate(`list?${name}`);
+    navigate(`spaces?category=${name}`);
   };
 
   const updateList = () => {
@@ -82,10 +82,11 @@ const Main = () => {
         <PlaceText>인기만점 찜!콩!</PlaceText>
         <ListWrapper>
           {listData.map(
-            ({ id, room_name, address, price, max_capacity, image }) => (
+            ({ id, title, address, price, max_capacity, image }) => (
               <ListItem
+                id={id}
                 key={id}
-                room_name={room_name}
+                title={title}
                 address={address}
                 price={price}
                 capacity={max_capacity}
@@ -105,6 +106,7 @@ const Main = () => {
               <Review
                 key={id}
                 image={image}
+                space={space}
                 space_name={space.space_name}
                 price={space.price}
                 content={content}

@@ -27,7 +27,7 @@ const Registration = () => {
     formData.append('max_capacity', spaceInfo.max_capacity);
     formData.append('address', spaceInfo.address);
     formData.append('price', spaceInfo.price);
-    formData.append('category_id', 1);
+    formData.append('category_title', spaceInfo.category[0]);
     for (let i = 0; i < spaceInfo.filename.length; i++) {
       formData.append('filename', spaceInfo.filename[i]);
     }

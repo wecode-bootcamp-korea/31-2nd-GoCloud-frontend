@@ -14,6 +14,7 @@ const KaKaoLogin = () => {
 
     axios(option).then(res => {
       localStorage.setItem('access_token', res.data.token);
+      localStorage.setItem('name', res.data.name);
       navigate('/');
     });
   }, [code, navigate]);
