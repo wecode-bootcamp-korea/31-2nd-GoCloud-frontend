@@ -21,10 +21,12 @@ const Nav = () => {
       <GoGloud onClick={navigateMain}>Go-Cloud</GoGloud>
       <Search />
       <Menu>
-        <div>내 공간 등록하기</div>
-        <div>
-          <AiOutlineMenu onClick={asideToggle} />
-        </div>
+        <AsideMenu>
+          <div>내 공간 등록하기</div>
+          <div>
+            <AiOutlineMenu onClick={asideToggle} />
+          </div>
+        </AsideMenu>
       </Menu>
       <Aside aside={aside} asideToggle={asideToggle} setAside={setAside} />
     </NavBox>
@@ -57,4 +59,9 @@ const Menu = styled.div`
   ${({ theme }) => theme.flexMixIn('space-around', '')}
   font-size: 20px;
   cursor: pointer;
+`;
+
+const AsideMenu = styled.div`
+  display: flex;
+  transform: translateX(-30px);
 `;

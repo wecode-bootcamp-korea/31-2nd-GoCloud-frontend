@@ -13,9 +13,9 @@ const ListItem = ({ image }) => {
         autoplay={{ delay: 3000 }}
         navigation
       >
-        {image.map(({ id, img }) => (
-          <SwiperSlide key={id}>
-            <img alt="bgimg" src={img} />
+        {image.map((data, index) => (
+          <SwiperSlide key={index}>
+            <img alt="bgimg" src={data} />
           </SwiperSlide>
         ))}
       </Swiper>

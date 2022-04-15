@@ -1,20 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FaAngleRight } from 'react-icons/fa';
+import { API } from '../../config';
 
-const BookingFormat = ({ children }) => {
-  const { tag, content, date, price } = children;
+const BookingFormat = ({ space, price, start_time, space_id }) => {
+  const navigate = useNavigate();
 
+  const start = start_time;
+  const dateFormat = date => {
+    const YEAR = date.slice(0, 4);
+    const MONTH = date.slice(5, 7);
+    const DAY = date.slice(8, 10);
+    const HOUR = date.slice(11, 13);
+    const HOURPLUS = Number(date.slice(11, 13)) + 1;
+
+    const DATE = `${YEAR}-${MONTH}-${DAY} ${HOUR}:00 ~ ${HOURPLUS}:00`;
+
+    return DATE;
+  };
+  const goToDetail = () => {
+    navigate(`/detail/${space_id}`);
+  };
   return (
-    <ReservCard to="/">
+    <ReservCard onClick={goToDetail}>
       <Img />
       <Right>
-        <Tags>{tag}</Tags>
-        <Content>{content}</Content>
+        <Tags>예약완료</Tags>
+        <Content>{`${space}`}</Content>
 
-        <Date>{date}</Date>
-        <Price>{price}</Price>
+        <Date>{`${dateFormat(start)}`}</Date>
+        <Price>{`${Number(price).toLocaleString('en')}원`}</Price>
       </Right>
       <RightArrow />
     </ReservCard>
@@ -23,7 +39,7 @@ const BookingFormat = ({ children }) => {
 
 export default BookingFormat;
 
-const ReservCard = styled(Link)`
+const ReservCard = styled.div`
   display: flex;
   position: relative;
   width: calc(100% / 2 - 10px);

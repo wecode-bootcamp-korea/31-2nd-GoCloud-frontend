@@ -107,6 +107,7 @@ const PhoneNumerBox = styled.ul`
 
 const PhoneNumber = styled.li`
   display: block;
+  margin-bottom: 5px;
   text-align: center;
   font-size: 20px;
 `;
@@ -115,7 +116,7 @@ const PhoneNumnerInput = styled.input`
   margin: 20px 20px 0;
   width: calc(100% - 40px);
   height: 30px;
-  -webkit-appearance: none;
+  border: 1px solid #767676;
 `;
 
 const PhoneNumberWrap = styled.div`
@@ -127,6 +128,7 @@ const PhoneNumberButton = styled.button`
   width: 80px;
   height: 30px;
   border: none;
+  border-radius: 5px;
   background-color: #222;
   color: #fff;
   -webkit-appearance: none;

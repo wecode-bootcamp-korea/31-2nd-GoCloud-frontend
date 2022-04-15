@@ -7,29 +7,29 @@ import theme from '../styles/theme';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { BsPersonFill } from 'react-icons/bs';
 
-const ListItem = ({ id, room_name, address, price, capacity, image }) => {
+const ListItem = ({ id, title, address, price, capacity, image }) => {
   const navigate = useNavigate();
   const goToDetail = () => {
-    navigate(`spaces/detail/${id}`);
+    navigate(`/detail/${id}`);
   };
 
   return (
-    <ListBox onClick={goToDetail}>
+    <ListBox>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
         slidesPerView={1}
         navigation
       >
-        {image.map(({ img }, idx) => (
+        {image.map((data, idx) => (
           <SwiperSlide key={idx}>
-            <ListImg src={img} />
+            <ListImg src={data} />
           </SwiperSlide>
         ))}
       </Swiper>
 
-      <ListInfo>
-        <ListTitle>{room_name}</ListTitle>
+      <ListInfo onClick={goToDetail}>
+        <ListTitle>{title}</ListTitle>
         <ListHashTag>
           <FaMapMarkerAlt />
           <ListAddress>{address}</ListAddress>
@@ -114,6 +114,7 @@ const ListAddress = styled.div`
 `;
 
 const ListPriceHour = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   margin-top: 10px;
@@ -132,8 +133,10 @@ const ListPriceText = styled.span`
 `;
 
 const LimitBox = styled.span`
-  display: flex;
-  margin-left: 90px;
+  position: absolute;
+  ${({ theme }) => theme.flexMixIn('center', 'center')};
+  // margin-left: 90px;
+  right: 10px;
 `;
 
 const ListLimit = styled.div`

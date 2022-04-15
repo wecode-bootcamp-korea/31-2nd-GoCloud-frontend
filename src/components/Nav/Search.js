@@ -14,8 +14,8 @@ const Search = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    const queryString = `?${searchInput}`;
-    navigate(`/list${queryString}`);
+    const queryString = `?category=${searchInput}`;
+    navigate(`/spaces${queryString}`);
   };
 
   return (
@@ -23,7 +23,7 @@ const Search = () => {
       <SearchIcon />
       <SearchInput
         type="text"
-        placeholder="지역, 공간유형, 공간명으로 찾아보세여"
+        placeholder="지역, 공간유형, 공간명으로 찾아보세요"
         onChange={handleInput}
       />
     </SearchBox>
@@ -35,6 +35,7 @@ export default Search;
 const SearchBox = styled.form`
   position: relative;
   right: 15%;
+  transform: translateX(150px);
 `;
 
 const SearchIcon = styled(GoSearch)`
