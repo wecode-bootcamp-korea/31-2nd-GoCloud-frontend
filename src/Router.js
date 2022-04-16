@@ -10,6 +10,7 @@ import Join from './pages/Join/Join';
 import List from './pages/List/List';
 import Login from './pages/Login/Login';
 import Main from './pages/Main/Main';
+import BookingList from './pages/BookingList/BookingList.js';
 
 const Router = () => {
   return (
@@ -23,6 +24,7 @@ const Router = () => {
         <Route path="/join" element={<Join />} />
         <Route path="/list" element={<List />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/bookinglist" element={<BookingList />} />
       </Routes>
       <Footer />
     </BrowserRouter>
