@@ -45,7 +45,7 @@ const GoGloud = styled.div`
 const Menu = styled.div`
   width: 200px;
   position: absolute;
-  left: 80%;
+  left: 85%;
   ${({ theme }) => theme.flexMixIn('space-around', '')}
   font-size: 20px;
 `;
