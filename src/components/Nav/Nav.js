@@ -3,23 +3,30 @@ import styled from 'styled-components';
 import Aside from './Aside';
 import Search from './Search';
 import { AiOutlineMenu } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
 
 const Nav = () => {
-  const [aside, setAside] = useState(true);
-  const toggle = () => {
+  const [aside, setAside] = useState(false);
+  const navigate = useNavigate();
+
+  const navigateMain = () => {
+    navigate('/');
+  };
+
+  const asideToggle = () => {
     setAside(!aside);
   };
   return (
     <NavBox>
-      <GoGloud>Go-Cloud</GoGloud>
+      <GoGloud onClick={navigateMain}>Go-Cloud</GoGloud>
       <Search />
       <Menu>
         <div>내 공간 등록하기</div>
         <div>
-          <AiOutlineMenu onClick={toggle} />
+          <AiOutlineMenu onClick={asideToggle} />
         </div>
       </Menu>
-      <Aside aside={aside} toggle={toggle} />
+      <Aside aside={aside} asideToggle={asideToggle} setAside={setAside} />
     </NavBox>
   );
 };
@@ -40,6 +47,7 @@ const GoGloud = styled.div`
   text-align: left;
   font-size: 35px;
   font-weight: bold;
+  cursor: pointer;
 `;
 
 const Menu = styled.div`
@@ -48,4 +56,5 @@ const Menu = styled.div`
   left: 85%;
   ${({ theme }) => theme.flexMixIn('space-around', '')}
   font-size: 20px;
+  cursor: pointer;
 `;
