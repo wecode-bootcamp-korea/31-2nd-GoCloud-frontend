@@ -4,26 +4,37 @@ import styled from 'styled-components';
 import Service from './AsideService';
 import HostModal from './HostModal';
 import SERVICE_LIST from './AsdieThirdBox';
+import LogOutModal from './LogOutModal';
 import { AiOutlineArrowRight, AiFillGithub } from 'react-icons/ai';
-import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io';
+import {
+  IoIosArrowForward,
+  IoIosArrowDown,
+  IoIosArrowUp,
+} from 'react-icons/io';
 import { BsFillJournalBookmarkFill, BsHouse } from 'react-icons/bs';
 
-const Aside = ({ aside, toggle }) => {
+const Aside = ({ aside, asideToggle, setAside }) => {
   const token = localStorage.getItem('access_token');
   const [service, setService] = useState(false);
   const [host, setHost] = useState(false);
+  const [logOut, setLogOut] = useState(false);
+
+  const logOutToggle = () => {
+    setLogOut(!logOut);
+  };
 
   const serviceToggle = () => {
     setService(!service);
   };
 
   const hostToggle = () => {
-    setHost(!host);
-  };
-
-  const logOut = () => {
-    localStorage.clear();
-    navigate('/main');
+    if (token) {
+      setHost(!host);
+    } else {
+      alert('로그인을 해야 호스트 등록이 가능합니다.');
+      navigate('/login');
+      setAside(!aside);
+    }
   };
 
   const navigate = useNavigate();
@@ -32,8 +43,20 @@ const Aside = ({ aside, toggle }) => {
     navigate('/host');
   };
 
-  const login = () => {
+  const loginNavigate = () => {
+    setAside(!aside);
     navigate('/login');
+  };
+
+  const regitrationNavigae = () => {
+    if (token) {
+      navigate('/bookinglist');
+      setAside(!aside);
+    } else {
+      navigate('/login');
+      alert('로그인을 해야 이용 할 수 있습니다');
+      setAside(!aside);
+    }
   };
 
   return (
@@ -47,23 +70,29 @@ const Aside = ({ aside, toggle }) => {
             </div>
           ) : (
             <div>
-              <LoginSignIn onClick={login}>로그인</LoginSignIn>
+              <LoginSignIn onClick={loginNavigate}>로그인</LoginSignIn>
               <LoginSignIn>회원가입</LoginSignIn>
             </div>
           )}
-          <CloseBox>
-            <AiOutlineArrowRight onClick={toggle} />
-          </CloseBox>
+          <CloseBox onClick={asideToggle} />
         </GuestBox>
         <HostBox onClick={hostToggle}>
           <Host>호스트로</Host>
           <Host>등록하기</Host>
         </HostBox>
-        {host && <HostModal hostToggle={hostToggle} />}
+        {host && (
+          <HostModal
+            host={host}
+            setHost={setHost}
+            aside={aside}
+            setAside={setAside}
+            hostToggle={hostToggle}
+          />
+        )}
       </AsideBoxfirst>
       <ScrollWrapper>
         <AisdeBoxSecond>
-          <SecondBoxReservation>
+          <SecondBoxReservation onClick={regitrationNavigae}>
             <BsFillJournalBookmarkFill />
             <Reservation>예약 리스트</Reservation>
           </SecondBoxReservation>
@@ -90,30 +119,43 @@ const Aside = ({ aside, toggle }) => {
           <ThirdBoxService>
             서비스 정보
             <ThridBoxArrow>
-              <IoIosArrowDown onClick={serviceToggle} />
+              {service ? (
+                <IoIosArrowUp onClick={serviceToggle} />
+              ) : (
+                <IoIosArrowDown onClick={serviceToggle} />
+              )}
             </ThridBoxArrow>
           </ThirdBoxService>
           {service && <Service />}
         </AisdeBoxThrid>
         <LoginBox>
           {token ? (
-            <GuestLoginBox onClick={logOut}>로그아웃</GuestLoginBox>
+            <GuestLoginBox onClick={logOutToggle}>로그아웃</GuestLoginBox>
           ) : (
-            <GuestLoginBox onClick={login}>로그인</GuestLoginBox>
+            <GuestLoginBox onClick={loginNavigate}>로그인</GuestLoginBox>
           )}
           <GuestLoginBox>Powerd by C Go-Cloud</GuestLoginBox>
         </LoginBox>
       </ScrollWrapper>
       <HostLoginBox onClick={hostNavigate}>호스트 센터로 이동</HostLoginBox>
+      {logOut && (
+        <LogOutModal
+          logOut={logOut}
+          setLogOut={setLogOut}
+          aside={aside}
+          setAside={setAside}
+        />
+      )}
     </AsideBox>
   );
 };
+
 export default Aside;
 
 const AsideBox = styled.div`
   position: fixed;
   top: 0;
-  right: ${props => (props.aside ? '-100%' : 0)};
+  right: ${props => (props.aside ? 0 : '-100%')};
   transition: 0.9s ease-in-out;
   bottom: 0;
   display: block;
@@ -152,7 +194,7 @@ const HostBox = styled.div`
   background-color: #6d3afb;
 `;
 
-const CloseBox = styled.div`
+const CloseBox = styled(AiOutlineArrowRight)`
   position: absolute;
   top: 0%;
   left: 78%;
@@ -171,6 +213,7 @@ const SecondBoxReservation = styled.div`
   width: 30%;
   margin-left: 5px;
   border-right: 1px solid #ebebeb;
+  cursor: pointer;
 `;
 
 const Reservation = styled.div`

@@ -30,8 +30,7 @@ const Footer = () => {
               Go-Cloud는 통신판매중개자이며 통신판매의 당사자가 아닙니다 따라서
             </BottomListLi>
             <BottomListLi>
-              스페이스 클라우드는 공간 거래정보 및 거래애에 대해 책임지지
-              않습니다.
+              고 클라우드는 공간 거래정보 및 거래애 대해 책임지지 않습니다.
             </BottomListLi>
           </BottomList>
         </FooterBottomArea>
@@ -67,7 +66,6 @@ const GoCloud = styled.div`
 const BlogBox = styled.div`
   font-size: 12px;
 `;
-
 const FooterBottomArea = styled.div`
   display: block;
   padding: 15px 0 0;

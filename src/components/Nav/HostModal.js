@@ -4,11 +4,11 @@ import { API } from '../../config';
 import styled from 'styled-components';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
-const HostModal = ({ hostToggle }) => {
+const HostModal = ({ hostToggle, host, setHost, aside, setAside }) => {
   const [phoneNumberData, setPhoneNumberData] = useState('');
   const navigate = useNavigate();
 
-  const host = () => {
+  const hostRegister = () => {
     fetch(`${API.hostconvert}`, {
       method: 'POST',
       headers: {
@@ -22,9 +22,13 @@ const HostModal = ({ hostToggle }) => {
       .then(res => {
         if (res.message === 'DECODE_ERROR') {
           alert('로그인을 해야 호스트 등록이 가능합니다');
+          setHost(!host);
+          setAside(!aside);
         } else if (res.message === 'ALREADY_EXISTS') {
           alert('호스트 등록 완료');
           navigate('/host');
+          setHost(!host);
+          setAside(!aside);
         }
       });
   };
@@ -50,7 +54,9 @@ const HostModal = ({ hostToggle }) => {
             onChange={handleInput}
           />
           <PhoneNumberWrap>
-            <PhoneNumberButton onClick={host}>권한 받기</PhoneNumberButton>
+            <PhoneNumberButton onClick={hostRegister}>
+              권한 받기
+            </PhoneNumberButton>
           </PhoneNumberWrap>
         </PhoneNumerBox>
       </HostModalBox>
