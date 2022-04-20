@@ -20,9 +20,7 @@ const Search = () => {
 
   return (
     <SearchBox onSubmit={onSubmit}>
-      <SearchIcon>
-        <GoSearch />
-      </SearchIcon>
+      <SearchIcon />
       <SearchInput
         type="text"
         placeholder="지역, 공간유형, 공간명으로 찾아보세여"
@@ -36,13 +34,13 @@ export default Search;
 
 const SearchBox = styled.form`
   position: relative;
-  right: 20%;
+  right: 15%;
 `;
 
-const SearchIcon = styled.div`
+const SearchIcon = styled(GoSearch)`
   position: absolute;
   left: 2%;
-  bottom: 16%;
+  bottom: 24%;
   width: 25px;
   height: 25px;
   font-size: 25px;
@@ -50,8 +48,7 @@ const SearchIcon = styled.div`
 
 const SearchInput = styled.input`
   width: 400px;
-  height: 40px;
   border-radius: 100px;
   margin-right: 162px;
-  padding-left: 50px;
+  padding: 15px 40px;
 `;
