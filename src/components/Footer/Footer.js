@@ -11,12 +11,7 @@ const Footer = () => {
     <FooterBox>
       <FooterWidth>
         <FooterTopArea>
-          <GoCloud>
-            Go-Cloud
-            <FooterLogo>
-              <FaInternetExplorer />
-            </FooterLogo>
-          </GoCloud>
+          <GoCloud>Go-Cloud</GoCloud>
           <BlogBox>
             블로그 | 이용약관 | 개인정보처리방침 | 운영정책 | 고객문의
           </BlogBox>
@@ -35,17 +30,9 @@ const Footer = () => {
               Go-Cloud는 통신판매중개자이며 통신판매의 당사자가 아닙니다 따라서
             </BottomListLi>
             <BottomListLi>
-              스페이스 클라우드는 공간 거래정보 및 거래애에 대해 책임지지
-              않습니다.
+              고 클라우드는 공간 거래정보 및 거래애 대해 책임지지 않습니다.
             </BottomListLi>
           </BottomList>
-          <BottomLogo>
-            <Instagram />
-            <FaceBook />
-            <Twitter />
-            <KaKao />
-            <Blog />
-          </BottomLogo>
         </FooterBottomArea>
       </FooterWidth>
     </FooterBox>
@@ -74,12 +61,10 @@ const FooterTopArea = styled.div`
 const GoCloud = styled.div`
   display: flex;
   font-size: 35px;
+  font-weight: bold;
 `;
 const BlogBox = styled.div`
   font-size: 12px;
-`;
-const FooterLogo = styled.div`
-  color: purple;
 `;
 const FooterBottomArea = styled.div`
   display: block;
@@ -97,24 +82,4 @@ const BottomListLi = styled.li`
   padding-left: 11px;
   margin: 5px 0 0 6px;
   font-size: 13px;
-`;
-const BottomLogo = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  font-size: 30px;
-`;
-const Instagram = styled(BsInstagram)`
-  color: blue;
-`;
-const FaceBook = styled(BsFacebook)`
-  color: purple;
-`;
-const Twitter = styled(AiFillTwitterSquare)`
-  color: #50bcdf;
-`;
-const KaKao = styled(RiKakaoTalkFill)`
-  color: #ffff00;
-`;
-const Blog = styled(SiBlogger)`
-  color: #008000;
 `;
