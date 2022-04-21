@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -6,9 +7,10 @@ import theme from '../styles/theme';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { BsPersonFill } from 'react-icons/bs';
 
-const ListItem = ({ room_name, address, price, capacity, image }) => {
+const ListItem = ({ id, room_name, address, price, capacity, image }) => {
+  const navigate = useNavigate();
   const goToDetail = () => {
-    console.log('goToDeatail');
+    navigate(`spaces/detail/${id}`);
   };
 
   return (
