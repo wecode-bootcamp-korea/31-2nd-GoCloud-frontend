@@ -20,15 +20,13 @@ const Main = () => {
   const location = useLocation();
 
   useEffect(() => {
-    fetch(`${API.spacelist}${location.search || `?limit=${limit}&offset=0`}`, {
-      method: 'GET',
-    })
+    fetch(`${API.spacelist}${location.search || `?limit=${limit}&offset=0`}`)
       .then(res => res.json())
       .then(data => setListData(data.result));
   }, [limit, location.search]);
 
   useEffect(() => {
-    fetch(`${API.spacesreviews}`, { method: 'GET' })
+    fetch(`${API.spacesreviews}`)
       .then(res => res.json())
       .then(res => setReviewData(res.result));
   }, []);

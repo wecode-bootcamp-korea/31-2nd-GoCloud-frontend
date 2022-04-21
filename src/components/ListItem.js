@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -6,17 +7,22 @@ import theme from '../styles/theme';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { BsPersonFill } from 'react-icons/bs';
 
-const ListItem = ({ room_name, address, price, capacity, image }) => {
+const ListItem = ({ id, room_name, address, price, capacity, image }) => {
+  const navigate = useNavigate();
+  const goToDetail = () => {
+    navigate(`spaces/detail/${id}`);
+  };
+
   return (
-    <ListBox>
+    <ListBox onClick={goToDetail}>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
         slidesPerView={1}
         navigation
       >
-        {image.map(({ id, img }) => (
-          <SwiperSlide key={id}>
+        {image.map(({ img }, idx) => (
+          <SwiperSlide key={idx}>
             <ListImg src={img} />
           </SwiperSlide>
         ))}
@@ -29,7 +35,7 @@ const ListItem = ({ room_name, address, price, capacity, image }) => {
           <ListAddress>{address}</ListAddress>
         </ListHashTag>
         <ListPriceHour>
-          <ListPrice>{price}</ListPrice>
+          <ListPrice>{`${Number(price).toLocaleString('en')}`}</ListPrice>
           <ListPriceText>원/시간</ListPriceText>
           <LimitBox>
             <BsPersonFill />
