@@ -14,7 +14,7 @@ const Review = ({ image, space_name, content, price }) => {
       <ReviewInfo>
         <ReviewTitle>{space_name}</ReviewTitle>
         <ReviewPriceBox>
-          <ReviewPrice>{price}</ReviewPrice>
+          <ReviewPrice>{`${Number(price).toLocaleString('en')}`}</ReviewPrice>
           <ReviewText>원/시간</ReviewText>
         </ReviewPriceBox>
         <ReviewComment>{content}</ReviewComment>
