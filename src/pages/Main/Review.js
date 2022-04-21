@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import theme from '../../styles/theme';
 
-const Review = ({ id, image, space_name, content, price }) => {
+const Review = ({ id, image, space_name, content, price, space }) => {
   const navigate = useNavigate();
+
   const goToDetail = () => {
-    navigate(`spaces/detail/${id}`);
+    navigate(`detail/${space.space_id}`);
   };
   return (
     <ReviewBox onClick={goToDetail}>

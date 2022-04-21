@@ -1,24 +1,36 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+
 import styled from 'styled-components';
 import BookingFormat from './BookingFormat';
+import { API } from '../../config';
 
 const BookingList = () => {
   const [bookingDate, setBookingDate] = useState('');
-
   useEffect(() => {
-    axios.get('/data/bookingList.json').then(result => {
-      setBookingDate(result.data);
-    });
+    fetch(`${API.booking_list}`, {
+      headers: {
+        Authorization: localStorage.getItem('access_token'),
+      },
+    })
+      .then(res => res.json())
+      .then(data => setBookingDate(data.result));
   }, []);
 
   return (
     <Wrapper>
       <Heading>예약 내역 리스트</Heading>
       <ReservList>
-        {bookingDate &&
-          bookingDate.map(item => {
-            return <BookingFormat key={item.id}>{item}</BookingFormat>;
+        {bookingDate[0] &&
+          bookingDate.map(({ id, space_id, space, price, start_time }) => {
+            return (
+              <BookingFormat
+                key={id}
+                space_id={space_id}
+                space={space}
+                price={price}
+                start_time={start_time}
+              />
+            );
           })}
       </ReservList>
     </Wrapper>
