@@ -11,12 +11,7 @@ const Footer = () => {
     <FooterBox>
       <FooterWidth>
         <FooterTopArea>
-          <GoCloud>
-            Go-Cloud
-            <FooterLogo>
-              <FaInternetExplorer />
-            </FooterLogo>
-          </GoCloud>
+          <GoCloud>Go-Cloud</GoCloud>
           <BlogBox>
             블로그 | 이용약관 | 개인정보처리방침 | 운영정책 | 고객문의
           </BlogBox>
@@ -39,13 +34,6 @@ const Footer = () => {
               않습니다.
             </BottomListLi>
           </BottomList>
-          <BottomLogo>
-            <Instagram />
-            <FaceBook />
-            <Twitter />
-            <KaKao />
-            <Blog />
-          </BottomLogo>
         </FooterBottomArea>
       </FooterWidth>
     </FooterBox>
@@ -74,13 +62,12 @@ const FooterTopArea = styled.div`
 const GoCloud = styled.div`
   display: flex;
   font-size: 35px;
+  font-weight: bold;
 `;
 const BlogBox = styled.div`
   font-size: 12px;
 `;
-const FooterLogo = styled.div`
-  color: purple;
-`;
+
 const FooterBottomArea = styled.div`
   display: block;
   padding: 15px 0 0;
@@ -97,24 +84,4 @@ const BottomListLi = styled.li`
   padding-left: 11px;
   margin: 5px 0 0 6px;
   font-size: 13px;
-`;
-const BottomLogo = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  font-size: 30px;
-`;
-const Instagram = styled(BsInstagram)`
-  color: blue;
-`;
-const FaceBook = styled(BsFacebook)`
-  color: purple;
-`;
-const Twitter = styled(AiFillTwitterSquare)`
-  color: #50bcdf;
-`;
-const KaKao = styled(RiKakaoTalkFill)`
-  color: #ffff00;
-`;
-const Blog = styled(SiBlogger)`
-  color: #008000;
 `;
