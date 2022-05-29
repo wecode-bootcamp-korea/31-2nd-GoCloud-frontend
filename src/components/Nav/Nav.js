@@ -18,7 +18,7 @@ const Nav = () => {
   };
   return (
     <NavBox>
-      <GoGloud onClick={navigateMain}>Go-Cloud</GoGloud>
+      <GoGloud onClick={navigateMain}>Go - Cloud</GoGloud>
       <Search />
       <Menu>
         <AsideMenu>
