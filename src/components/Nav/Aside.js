@@ -167,8 +167,8 @@ const AsideBox = styled.div`
 `;
 
 const ScrollWrapper = styled.div`
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow-y: hidden;
+  overflow-x: auto;
   height: calc(100vh - 230px);
 `;
 const AsideBoxfirst = styled.div`

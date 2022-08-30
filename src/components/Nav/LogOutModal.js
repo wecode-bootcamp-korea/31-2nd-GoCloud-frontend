@@ -44,7 +44,7 @@ const LogOutBox = styled.div`
   border-radius: 3%;
   background-color: #fff;
   box-shadow: 4px 5px 10px rgb(0 0 0 / 50%);
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
 `;
 
 const LogOutModal = styled.div`
